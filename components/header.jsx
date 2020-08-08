@@ -1,0 +1,86 @@
+import Logo from "./logo/logo";
+import FblikeButtons from "./fblikebuttons/fblikebutton";
+const Header = (props) => (
+	<div className='container1'>
+		<Logo />
+		<FblikeButtons />
+		<div className='strtlrn '>
+			<span>Start Learning</span>
+			<span className='span2'>Become an Online Teacher</span>
+		</div>
+
+		<div className='signin-out '>
+			<span className='signin'>Sign In</span>
+			<span className='signout'>Sign Up</span>
+		</div>
+		<style jsx>
+			{`
+				.container1 {
+					width: 100%;
+					height: 100px;
+					display: flex;
+					justify-content: space-evenly;
+					border-bottom: 1px solid #ececec;
+				}
+				.strtlrn {
+					min-width: 200px;
+					max-width: 300vw;
+					align-self: center;
+
+					cursor: pointer;
+				}
+
+				span {
+					text-decoration: none;
+					font-size: 12px;
+					color: #949494;
+					padding-right: 6px;
+				}
+				.span2 {
+					font-family: Poppins-Light;
+					border-radius: 0px;
+					background-color: #1aa3d0;
+					padding: 11px 15px;
+					max-width: 234px;
+					color: #ffffff;
+					font-size: 12px;
+					text-align: center;
+					border: none;
+					cursor: pointer;
+				}
+
+				.signin-out {
+					min-width: 200px;
+					max-width: 20vw;
+					align-self: center;
+				}
+				.signout {
+					font-family: Poppins-Light;
+					border-radius: 0px;
+					background-color: #1aa3d0;
+					padding: 11px 15px;
+					max-width: 99px;
+					color: #ffffff;
+					font-size: 12px;
+					text-align: center;
+					border: none;
+				}
+
+				.signin {
+					font-family: Poppins-Light;
+					border-radius: 0px;
+					border: 1px solid #c3c3c3 !important;
+					padding: 10px 15px !important;
+					max-width: 99px !important;
+					color: #949494 !important ;
+					font-size: 12px !important;
+					text-align: center !important;
+					background-color: #ffffff !important;
+					margin-right: 5px;
+				}
+			`}
+		</style>
+	</div>
+);
+
+export default Header;
