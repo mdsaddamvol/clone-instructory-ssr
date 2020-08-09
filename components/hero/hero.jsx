@@ -1,12 +1,12 @@
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row, Button } from "react-bootstrap";
 
 const Hero = (props) => {
 	return (
 		<section>
 			<div className=' hero'>
 				<Container>
-					<Row>
-						<Col>
+					<Row xs={2} md={1}>
+						<Col xs={12} md={6}>
 							<div className='caption'>
 								<p>
 									Teach what you know, or lecture what you love. Teach as you
@@ -14,12 +14,12 @@ const Hero = (props) => {
 									are serving you the platform that assists you to create and
 									sell your own online courses.
 								</p>
-								<a href='#' className='width-btn-primary-lg slider-btn bg-red'>
+								<a href='#' className=' slider-btn bg-red'>
 									Upload Your Knowledge
 								</a>
 							</div>
 						</Col>
-						<Col>
+						<Col xs={12} md={6}>
 							<img
 								src='https://instructory.net//assets/images/slider-new.png'
 								alt='slider'
@@ -62,6 +62,7 @@ const Hero = (props) => {
 				}
 				a {
 					margin: 0;
+					margin-bottom: 10px;
 					box-sizing: inherit;
 					text-decoration: none;
 					font-family: Poppins-Light;
@@ -78,6 +79,7 @@ const Hero = (props) => {
 				}
 
 				img {
+					width: 100%;
 				}
 			`}</style>
 		</section>

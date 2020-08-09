@@ -1,35 +1,61 @@
 import Logo from "./logo/logo";
 import FblikeButtons from "./fblikebuttons/fblikebutton";
+import { Container, Col, Row } from "react-bootstrap";
 const Header = (props) => (
-	<div className='container1'>
-		<Logo />
-		<FblikeButtons />
-		<div className='strtlrn '>
+	<div className='header'>
+		<div className='logo'>
+			<Logo />
+		</div>
+		<div className='fblikebutton pl-5'>
+			<FblikeButtons />
+		</div>
+		<div className='strtlrn'>
 			<span>Start Learning</span>
 			<span className='span2'>Become an Online Teacher</span>
 		</div>
-
-		<div className='signin-out '>
+		<div className='signinout'>
 			<span className='signin'>Sign In</span>
 			<span className='signout'>Sign Up</span>
 		</div>
 		<style jsx>
 			{`
-				.container1 {
+				.header {
 					width: 100%;
-					height: 100px;
+					min-height: 100px;
+					max-height: 300px;
 					display: flex;
 					justify-content: space-evenly;
-					border-bottom: 1px solid #ececec;
+					flex-wrap: wrap;
+					align-items: center;
+				}
+				.logo {
+					margin: 10px;
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					flex: 0 0 300px;
+				}
+				.fblikebutton {
+					margin: 10px;
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					flex: 0 0 300px;
 				}
 				.strtlrn {
-					min-width: 200px;
-					max-width: 300vw;
-					align-self: center;
-
-					cursor: pointer;
+					margin: 10px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex: 0 0 300px;
 				}
-
+				.signinout {
+					margin: 10px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex: 0 0 300px;
+				}
 				span {
 					text-decoration: none;
 					font-size: 12px;
@@ -49,11 +75,6 @@ const Header = (props) => (
 					cursor: pointer;
 				}
 
-				.signin-out {
-					min-width: 200px;
-					max-width: 20vw;
-					align-self: center;
-				}
 				.signout {
 					font-family: Poppins-Light;
 					border-radius: 0px;
