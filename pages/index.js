@@ -11,8 +11,7 @@ import {
 import Header from "../components/header.jsx";
 
 import Hero from "../components/hero/hero.jsx";
-
-import AllCourses from "../components/sections/allcorses/allcouses.component.jsx";
+import Courses from "../components/sections/best-courses-section/courses-section.component.jsx";
 
 library.add(fab, faCartPlus, faHeart, faShare);
 
@@ -30,7 +29,7 @@ export default function Home() {
 			</Head>
 			<Header />
 			<Hero />
-			<AllCourses />
+			<Courses />
 		</React.Fragment>
 	);
 }

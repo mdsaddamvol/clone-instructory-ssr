@@ -1,21 +1,67 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CoursesCard from "../../cards/courses-card/couses-card.component";
 import OwlCarousel from "react-owl-carousel2";
 import { Container } from "react-bootstrap";
+const { createApolloFetch } = require("apollo-fetch");
 
-const Courses = ({ id, catagory }) => {
-	const [photos, setPhotos] = useState([]);
+const feetch = createApolloFetch({
+	uri: "http://localhost:3000/api/graphql",
+});
 
-	useEffect(() => {
-		if (photos.length === 0) {
-			const fetchdta = () => {
-				fetch("https://jsonplaceholder.typicode.com/photos")
-					.then((respons) => respons.json())
-					.then((jso) => setPhotos(jso.slice(0, 9)));
-			};
-			fetchdta();
+const query = `
+{ allCatagory{
+	bestSelling{
+		courseId,
+		title,
+		catagory,
+		price,
+		enroled,
+		likes,
+		tutorId,
+		overview,
+		level,
+		language,
+		created_at},
+		webDevelopment{
+			courseId,
+			title,
+			catagory,
+			price,
+			enroled,
+			likes,
+			tutorId,
+			overview,
+			level,
+			language,
+			created_at},
+		graphics{
+		courseId,
+		title,
+		catagory,
+		price,
+		enroled,
+		likes,
+		tutorId,
+		overview,
+		level,
+		language,
+		created_at,
 		}
-	}, [photos, setPhotos]);
+		academic{
+			courseId,
+			title,
+			catagory,
+			price,
+			enroled,
+			likes,
+			tutorId,
+			overview,
+			level,
+			language,
+			created_at},
+	}}`;
+
+const Courses = () => {
 	const options = {
 		autoplayHoverPause: true,
 		rewind: true,
@@ -38,16 +84,61 @@ const Courses = ({ id, catagory }) => {
 		},
 	};
 
+	const [stat, setStat] = useState({
+		bestSelling: [],
+		webDevelopment: [],
+		graphics: [],
+		academic: [],
+	});
+	useEffect(() => {
+		feetch({
+			query,
+		}).then((data) => setStat(data.data.allCatagory));
+	}, []);
+
 	return (
 		<Container className=' pl-5 pr-5' fluid>
 			<div className='border-bottom '>
-				<h1 className=''>{catagory} corses</h1>
+				<h1 className=''>Best Selling courses</h1>
 			</div>
 			<div className='cards-container'>
 				<OwlCarousel usref='car' options={options}>
-					{photos.map((photo) => {
-						return <CoursesCard {...photo} key={photo.id} />;
+					{stat.bestSelling.map((catagory) => {
+						return <CoursesCard key={catagory.courseId} {...catagory} />;
 					})}
+				</OwlCarousel>
+			</div>
+
+			<div className='border-bottom '>
+				<h1 className=''>web-development courses</h1>
+			</div>
+			<div className='cards-container'>
+				<OwlCarousel usref='car' options={options}>
+					{stat.webDevelopment.map((catagory) => (
+						<CoursesCard key={catagory.courseId} {...catagory} />
+					))}
+				</OwlCarousel>
+			</div>
+
+			<div className='border-bottom '>
+				<h1 className=''>graphics courses</h1>
+			</div>
+			<div className='cards-container'>
+				<OwlCarousel usref='car' options={options}>
+					{stat.graphics.map((catagory) => (
+						<CoursesCard key={catagory.courseId} {...catagory} />
+					))}
+				</OwlCarousel>
+			</div>
+
+			<div className='border-bottom '>
+				<h1 className=''>Academic courses</h1>
+			</div>
+			<div className='cards-container'>
+				<OwlCarousel usref='car' options={options}>
+					{stat.academic.map((catagory) => (
+						<CoursesCard key={catagory.courseId} {...catagory} />
+					))}
 				</OwlCarousel>
 			</div>
 
@@ -79,7 +170,6 @@ const Courses = ({ id, catagory }) => {
 					}
 					.cards-container {
 						display: flex;
-
 						justify-content: center;
 						align-items: center;
 					}

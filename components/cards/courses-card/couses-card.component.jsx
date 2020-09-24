@@ -1,5 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const CoursesCard = ({ albumId, id, title, url, thumbnailUrl }) => {
+const CoursesCard = ({
+	courseId,
+	title,
+	catagory,
+	price,
+	enroled,
+	likes,
+	overview,
+}) => {
 	return (
 		<div className='card'>
 			<div className='card-img'>
@@ -7,21 +15,17 @@ const CoursesCard = ({ albumId, id, title, url, thumbnailUrl }) => {
 			</div>
 			<div className='tutor-name'>
 				<span>Kshim Uddin Masud</span>
-				<span>{id}+ enroled</span>
+				<span>{enroled}+ enroled</span>
 			</div>
 			<div className='card-title'>
-				<span>{title.slice(0, 20)}</span>
+				<span>{title}</span>
 			</div>
 			<div className='card-discription'>
-				<span>
-					Note that the development build is not optimized. To create a
-					production build, use yarn build.ote that the development build is not
-					optimized.
-				</span>
+				<span>{overview}</span>
 			</div>
 			<div className='price-tag'>
 				<div className='price'>
-					<span>TK 700</span>
+					<span>TK {price}</span>
 				</div>
 				<div className='icons'>
 					<FontAwesomeIcon
