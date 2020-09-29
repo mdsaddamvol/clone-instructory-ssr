@@ -69,7 +69,6 @@ const Courses = () => {
 		responsive: {
 			0: {
 				items: 1,
-				center: true,
 			},
 			600: {
 				items: 2,
@@ -172,6 +171,9 @@ const Courses = () => {
 						display: flex;
 						justify-content: center;
 						align-items: center;
+					}
+					.owl-item.active:first-child {
+						display: none;
 					}
 				`}
 			</style>
