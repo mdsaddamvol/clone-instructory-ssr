@@ -4,7 +4,7 @@ import knex from "knex";
 
 const db = knex({
 	client: "pg",
-	connection: process.env.POSTGRES_URI,
+	connection: process.env.DATABASE_URL,
 	debug: true,
 });
 const typeDefs = gql`
