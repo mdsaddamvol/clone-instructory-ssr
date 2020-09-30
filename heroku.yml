@@ -1,7 +1,15 @@
 build:
+<<<<<<< HEAD
   docker:
     web: Dockerfile
 run:
   web: yarn run start
 release:
+=======
+  docker: 
+    web: Dockerfile
+run: 
+  web: yarn run start
+release: 
+>>>>>>> 0c5723bc080c21140a1d6b148d570650bb533418
   image: web
