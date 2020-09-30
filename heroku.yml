@@ -1,0 +1,4 @@
+build:
+  docker: web:dockerfile
+run: web:yarn run start
+release: image:web

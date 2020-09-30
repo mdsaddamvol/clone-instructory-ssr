@@ -10,4 +10,4 @@ RUN yarn install
 COPY . /usr/src/app
 
 
-CMD "yarn" "run" "build" --bind 0.0.0.0:$PORT
+CMD ["yarn" "run" "build"] --bind 0.0.0.0:$PORT
