@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 const { createApolloFetch } = require("apollo-fetch");
 
 const feetch = createApolloFetch({
-	uri: process.env.API_URI,
+	uri: "https://instructory-clone.herokuapp.com/api/graphql",
 });
 
 const query = `
