@@ -8,7 +8,6 @@ COPY package.json /usr/src/app/
 RUN yarn install
 # Bundle app source
 COPY . /usr/src/app
-RUN yarn run build
-EXPOSE 3000
 
-CMD ["/bin/bash"]
+
+CMD "yarn" "run" "build" --bind 0.0.0.0:$PORT

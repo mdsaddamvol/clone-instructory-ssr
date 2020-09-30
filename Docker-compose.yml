@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     working_dir: /usr/src/app
-    command: yarn dev
+    command: yarn start
     environment:
       POSTGRES_URI: postgres://saddam:1234@postgres:5432/clone_instructory_db
     links:
