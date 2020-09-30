@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 const { createApolloFetch } = require("apollo-fetch");
 
 const feetch = createApolloFetch({
-	uri: process.envprocess.env.HOST_URI,
+	uri: process.env.HOST_URI,
 });
 
 const query = `
