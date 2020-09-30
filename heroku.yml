@@ -5,5 +5,3 @@ run:
   web: npm start
 release:
   image: web
-  command:
-    - npm run start
