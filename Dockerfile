@@ -6,4 +6,4 @@ COPY . /usr/src/app
 
 RUN npm install
 
-CMD "npm run build"
+CMD  [ \"npm\",\"run\", \"build\" ]
