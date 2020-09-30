@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 const { createApolloFetch } = require("apollo-fetch");
 
 const feetch = createApolloFetch({
-	uri: "http://localhost:3000/api/graphql",
+	uri: process.envprocess.env.HOST_URI,
 });
 
 const query = `
